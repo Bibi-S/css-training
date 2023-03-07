@@ -1,13 +1,14 @@
 :root {
   --text-clr: rgb(114, 114, 114);
-  --grid-img-width: 400px;
+  --grid-img-width: 380px;
+  --img-height: calc(var(--grid-img-width) - 150px);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  border: 0.5px solid rgb(165, 58, 58);
+  _border: 0.5px solid rgb(165, 58, 58);
 }
 html {
   font-size: 16px;
@@ -32,7 +33,7 @@ body {
 .shoes-header {
   /*wie kann man header auf die Breite des items automatisch anpassen?????*/
   width: var(--grid-img-width);
-  height: 250px;
+  height: var(--img-height);
   border-radius: 10px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
