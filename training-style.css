@@ -1,14 +1,14 @@
 :root {
-  --main-clr: gray;
+  --text-clr: rgb(114, 114, 114);
+  --grid-img-width: 400px;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  border: 3px solid rgb(165, 58, 58);
+  border: 0.5px solid rgb(165, 58, 58);
 }
-
 html {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -17,29 +17,39 @@ body {
   background-color: rgb(216, 218, 218);
 }
 .main-grid {
+  margin: 0 auto;
+  _border: 5px solid black;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, var(--grid-img-width));
   justify-content: space-evenly;
-  align-content: center;
 }
-.asics-header {
-  width: 400px;
-  height: 300px;
+.shoes-article {
+  _border: 5px solid red;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+}
+.shoes-header {
+  /*wie kann man header auf die Breite des items automatisch anpassen?????*/
+  width: var(--grid-img-width);
+  height: 250px;
+  border-radius: 10px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.asics {
   background-image: url(https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
-.adidas-header {
-  width: 400px;
-  height: 300px;
+.adidas {
   background-image: url(https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
-.new-balance-header {
-  width: 400px;
-  height: 300px;
+.new-balance {
   background-image: url(https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=800);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+}
+
+.shoes-content {
+  margin: 5px 5px;
+}
+.shoes-p {
+  color: var(--text-clr);
 }
