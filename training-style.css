@@ -1,6 +1,6 @@
 :root {
   --text-clr: rgb(114, 114, 114);
-  --grid-width: 300px;
+  --grid-width: 320px;
   --body-background: rgb(216, 218, 218);
 }
 
@@ -8,7 +8,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  border: 0.5px solid rgb(165, 58, 58);
+  _border: 0.5px solid rgb(165, 58, 58);
+
+  font-family: "Montserrat", sans-serif;
 }
 html {
   font-size: 16px;
@@ -19,7 +21,6 @@ body {
 }
 
 .main-grid {
-  border: 5px solid black;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, var(--grid-width));
@@ -31,7 +32,6 @@ body {
   }
 }
 .shoes-article {
-  border: 5px solid red;
   border-radius: 10px;
   background-color: white;
   text-align: left;
@@ -50,11 +50,11 @@ body {
 .shoes-description {
   color: var(--text-clr);
   font-size: 0.6rem;
+  padding-bottom: 5px;
 }
 /* Die Elemente, die einen Zugriff auf die Datenbank/Server (etw.wo die Daten gesammelt,gespeichert werden
  haben sollen, mussen mit form definiert werden? z.B Onlineshop:Anzahl,Farbe usw.?????*/
 .shoes-details {
-  _border: 5px solid black;
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -77,4 +77,53 @@ body {
 .buy-button {
   background-color: rgb(63, 101, 224);
   border-color: transparent;
+  color: white;
+}
+
+.colors-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  grid-column-end: span 2;
+}
+.color {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+}
+.only-sr {
+  font-size: 0;
+  position: absolute;
+}
+input[type="radio"]:checked + label > .color {
+  outline-offset: 1px;
+  outline: 2px solid black;
+}
+input[type="radio"] {
+  all: unset;
+  position: absolute;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.black {
+  background-color: black;
+}
+.one {
+  background-image: linear-gradient(90deg, green 50%, black 50%);
+}
+.two {
+  background-image: linear-gradient(90deg, blue 50%, black 50%);
+}
+.three {
+  background-image: linear-gradient(90deg, violet 50%, black 50%);
+}
+.uno {
+  background-image: linear-gradient(90deg, red 50%, white 50%);
+}
+.dos {
+  background-image: linear-gradient(90deg, black 50%, white 50%);
 }
