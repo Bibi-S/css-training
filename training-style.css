@@ -40,6 +40,9 @@ body {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  /*-moz-box-shadow: inset 40px 40px 50px #7e3939;
+  -webkit-box-shadow: inset 40px 40px 50px #662828; !!!!!!!DAS FUNKTIONIERT NICHT*/
+  box-shadow: inset 0px 0px 20px 10px white;
 }
 .shoes-content {
   margin: 5px 5px;
@@ -49,7 +52,7 @@ body {
 }
 .shoes-description {
   color: var(--text-clr);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   padding-bottom: 5px;
 }
 /* Die Elemente, die einen Zugriff auf die Datenbank/Server (etw.wo die Daten gesammelt,gespeichert werden
@@ -78,6 +81,16 @@ body {
   background-color: rgb(63, 101, 224);
   border-color: transparent;
   color: white;
+}
+
+.label-form {
+  padding-right: 10px;
+  font-size: 0.8rem;
+}
+.dropdown {
+  border-color: transparent;
+  border-radius: 5px;
+  width: 50px;
 }
 
 .colors-container {
