@@ -1,49 +1,80 @@
 :root {
   --text-clr: rgb(114, 114, 114);
   --grid-width: 300px;
+  --body-background: rgb(216, 218, 218);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  _border: 0.5px solid rgb(165, 58, 58);
+  border: 0.5px solid rgb(165, 58, 58);
 }
 html {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background-color: rgb(216, 218, 218);
+  background-color: var(--body-background);
 }
+
 .main-grid {
+  border: 5px solid black;
   margin: 0 auto;
-  _border: 5px solid black;
   display: grid;
   grid-template-columns: repeat(3, var(--grid-width));
   justify-content: space-evenly;
 }
-.shoes-article {
-  _border: 5px solid red;
-  border-radius: 10px;
-  background-color: white;
-  text-align: left;
-}
-
 @media screen and (max-width: 768px) {
   .main-grid {
     grid-template-columns: 1fr;
   }
 }
-
+.shoes-article {
+  border: 5px solid red;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+}
 .img-header {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
-
 .shoes-content {
   margin: 5px 5px;
 }
-.shoes-p {
+.shoes-h1 {
+  font-size: 0.8rem;
+}
+.shoes-description {
   color: var(--text-clr);
+  font-size: 0.6rem;
+}
+/* Die Elemente, die einen Zugriff auf die Datenbank/Server (etw.wo die Daten gesammelt,gespeichert werden
+ haben sollen, mussen mit form definiert werden? z.B Onlineshop:Anzahl,Farbe usw.?????*/
+.shoes-details {
+  _border: 5px solid black;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  justify-content: center;
+  background-color: var(--body-background);
+  border-radius: 10px;
+}
+
+.price-buy {
+  grid-column-end: span 2;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.price {
+  background-color: white;
+  margin-top: 0px;
+}
+.buy-button {
+  background-color: rgb(63, 101, 224);
+  border-color: transparent;
 }
