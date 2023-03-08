@@ -1,7 +1,6 @@
 :root {
   --text-clr: rgb(114, 114, 114);
-  --grid-img-width: 380px;
-  --img-height: calc(var(--grid-img-width) - 150px);
+  --grid-width: 300px;
 }
 
 *,
@@ -21,7 +20,7 @@ body {
   margin: 0 auto;
   _border: 5px solid black;
   display: grid;
-  grid-template-columns: repeat(3, var(--grid-img-width));
+  grid-template-columns: repeat(3, var(--grid-width));
   justify-content: space-evenly;
 }
 .shoes-article {
@@ -30,22 +29,16 @@ body {
   background-color: white;
   text-align: left;
 }
-.shoes-header {
-  /*wie kann man header auf die Breite des items automatisch anpassen?????*/
-  width: var(--grid-img-width);
-  height: var(--img-height);
-  border-radius: 10px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+
+@media screen and (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
 }
-.asics {
-  background-image: url(https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
-}
-.adidas {
-  background-image: url(https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
-}
-.new-balance {
-  background-image: url(https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=800);
+
+.img-header {
+  width: 100%;
+  height: auto;
 }
 
 .shoes-content {
